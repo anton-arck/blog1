@@ -1,7 +1,26 @@
 <h1> Blog 1.0 </h1>
+
+<table class="table">
+  <tr>
+    <th>Fecha de creación</th>
+    <th>Título</th>
+    <th>Contenido</th>
+    <th>Imagen</th>
+  </tr>
+
+  <% @posts.each do |post| %>
+    <tr>
+      <td><%= post.title%></td>
+      <td><%= post.created_at%></td>
+      <td><%= post.content%></td>
+      <td><img src=<%= post.image_url%> width="200px" height="200px"></td> 
+    </tr>
+  <% end %>
+</table>
+
 <form method="get" action="/posts/create">
   
-  <div class="form-group">
+  <div id="create_post" class="form-group">
     <label for="title">Ingrese titulo</label>
     <input id="title" name="title" class="form-control" placeholder="Escriba el titulo del post">
   </div>
@@ -19,3 +38,4 @@
   <button type="submit" class="btn btn-primary">Submit</button>
 
 </form>
+
