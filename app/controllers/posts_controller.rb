@@ -9,8 +9,8 @@ class PostsController < ApplicationController
       content: params[:content],
       image_url: params[:image_url])
    
-    if @post.save
-      redirect_to root_path
-    end
+   #  if @post.save
+      # redirect_to root_path
+    # end
   end
 end
